@@ -1,42 +1,49 @@
 import React, { Component } from 'react'
-import { FaCocktail } from "react-icons/fa"
+import { FaBeer, FaCocktail, FaHiking, FaShuttleVan } from "react-icons/fa"
 import Title from './Title'
 
 const serviceInfo = [
     {
         icon: <FaCocktail/>,
         title: "Free Coktails",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        info: "Lorem Ipsum is simply dummy text of the printing and industry. Lorem Ipsum has been."
     },
     {
-        icon: <FaCocktail/>,
-        title: "Free Coktails",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        icon: <FaHiking/>,
+        title: "Endless Fahiking",
+        info: "Lorem Ipsum is simply dummy text of the printing and industry. Lorem Ipsum has been."
     },
     {
-        icon: <FaCocktail/>,
-        title: "Free Coktails",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        icon: <FaShuttleVan/>,
+        title: "Free ShuttleVan",
+        info: "Lorem Ipsum is simply dummy text of the printing and industry. Lorem Ipsum has been."
     },
     {
-        icon: <FaCocktail/>,
-        title: "Free Coktails",
-        info: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        icon: <FaBeer/>,
+        title: "Free Stronges Beer",
+        info: "Lorem Ipsum is simply dummy text of the printing and industry. Lorem Ipsum has been."
     }
 ]
 
 
 class Service extends Component {
     state = {
-        services: [
-            
-        ]
+        services: serviceInfo,
     }
     render() {
         return (
-            <div>
+            <section className="services">
                 <Title title="Services" />
-            </div>
+                <div className="services-center">
+                    {this.state.services.map((item, index)=> {
+                        return <article key={index} className="service">
+                            <span> {item.icon} </span>
+                            <h6> {item.title} </h6>
+                            <p> {item.info} </p>
+                        </article>
+                    })}
+                </div>
+            </section>
         )
     }
 }
