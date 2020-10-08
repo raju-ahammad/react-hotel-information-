@@ -5,14 +5,16 @@ import Error from "./Components/Layout/Error";
 import Home from './Components/Layout/Home';
 import Rooms from './Components/Layout/Rooms';
 import SingleRoom from './Components/Layout/SingleRoom';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
     <>
+    <Navbar/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms" component={Rooms} />
-        <Route exact path="/single:room" component={SingleRoom} />
+        <Route exact path="/rooms/:slug" component={SingleRoom} />
         <Route component={ Error } />
       </Switch>
     </>
