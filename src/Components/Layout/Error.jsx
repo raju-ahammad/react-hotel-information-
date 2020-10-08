@@ -1,10 +1,9 @@
 import React from 'react'
+import Hero from './Hero'
 
 const Error = () => {
     return (
-        <div>
-            This is error pages
-        </div>
+        <Hero/>
     )
 }
 
