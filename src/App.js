@@ -6,6 +6,7 @@ import Home from './Components/Layout/Home';
 import Rooms from './Components/Layout/Rooms';
 import SingleRoom from './Components/Layout/SingleRoom';
 import Navbar from './Components/Navbar/Navbar';
+import FeaturedRooms from './Components/Rooms/FeaturedRooms';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/rooms/:slug" component={SingleRoom} />
         <Route component={ Error } />
       </Switch>
+      <FeaturedRooms/>
     </>
   );
 }
