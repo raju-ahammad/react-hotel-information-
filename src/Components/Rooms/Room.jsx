@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const Room = () => {
+const Room = ({room}) => {
+    const {name, slug, images, price} = room;
     return (
-        <div>
-            Room 
-        </div>
+        <article className="room">
+            <div className="img-container">
+                <img src={images[0]} alt="single room"/>
+            </div>
+        </article>
     )
 }
 
