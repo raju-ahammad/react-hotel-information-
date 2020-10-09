@@ -55,6 +55,10 @@ export class SingleRoom extends Component {
             ))}
                 </div>
                 <div className="single-room-info">
+                <article className="desc">
+                    <h3>details</h3>
+                    <p>{description}</p>
+                </article>
                 <article className="info">
                     <h3>info</h3>
                     <h6>price : ${price}</h6>
