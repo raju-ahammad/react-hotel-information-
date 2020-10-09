@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import FeaturedRooms from '../Rooms/FeaturedRooms'
 import Service from "../Services/Service"
 import Banner from './Banner'
 import Hero from './Hero'
@@ -13,6 +14,7 @@ const Home = () => {
             </Banner>
         </Hero>
         <Service/>
+        <FeaturedRooms/>
         </>
     )
 }
