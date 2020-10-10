@@ -42,29 +42,42 @@ export const RoomsFilter = ({ rooms }) => {
         <section className="filter-container">
             <Title title="Search Rooms"/>
             <form className="filter-form">
-            <div className="form-group">
-                <label htmlFor="type">room type</label>
-                <select
-                    name="type"
-                    id="type"
+                <div className="form-group">
+                    <label htmlFor="type">room type</label>
+                    <select
+                        name="type"
+                        id="type"
+                        onChange={handleChange}
+                        className="form-control"
+                        value={type}>
+                        {types}
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="capacity">Guests</label>
+                    <select
+                        name="capacity"
+                        id="capacity"
+                        onChange={handleChange}
+                        className="form-control"
+                        value={capacity}
+                    >
+                        {people}
+                    </select>
+                </div>
+                <div className="form-group">
+                <label htmlFor="price">room price ${price}</label>
+                <input
+                    type="range"
+                    name="price"
+                    min={minPrice}
+                    max={maxPrice}
+                    id="price"
+                    value={price}
                     onChange={handleChange}
                     className="form-control"
-                    value={type}>
-                    {types}
-                </select>
-            </div>
-            <div className="form-group">
-                <label htmlFor="capacity">Guests</label>
-                <select
-                    name="capacity"
-                    id="capacity"
-                    onChange={handleChange}
-                    className="form-control"
-                    value={capacity}
-                >
-                    {people}
-                </select>
-            </div>
+                />
+                </div>
             </form>
         </section>
     )
