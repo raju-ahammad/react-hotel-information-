@@ -23,7 +23,6 @@ export const RoomsFilter = ({ rooms }) => {
       } = context;
       //get unique types
       let types = getUnique(rooms, "type");
-      // add all
       types = ["all", ...types];
       // map to jsx
       types = types.map((item, index) => (
@@ -31,6 +30,13 @@ export const RoomsFilter = ({ rooms }) => {
           {item}
         </option>
       ));
+
+      let people = getUnique(rooms, "capacity");
+      people = people.map((item, index) => (
+        <option key={index} value={item}>
+        {item}
+        </option>
+  ));
 
     return (
         <section className="filter-container">
@@ -45,6 +51,18 @@ export const RoomsFilter = ({ rooms }) => {
                     className="form-control"
                     value={type}>
                     {types}
+                </select>
+            </div>
+            <div className="form-group">
+                <label htmlFor="capacity">Guests</label>
+                <select
+                    name="capacity"
+                    id="capacity"
+                    onChange={handleChange}
+                    className="form-control"
+                    value={capacity}
+                >
+                    {people}
                 </select>
             </div>
             </form>
