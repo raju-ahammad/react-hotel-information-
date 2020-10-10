@@ -55,10 +55,27 @@ export default class RoomProvider  extends Component {
         const target = event.target
         const value = event.type ==="checkbox" ? target.checked : target.value;
         const name = target.name
+        console.log(name, value, target);
         this.setState({
             [name]: value
-        })
+        },
+        this.filterRooms
+        
+        )
 
+    }
+
+    filterRooms = ()=> {
+        let { rooms,type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
+        let tempRooms = [...rooms]
+        capacity = parseInt(capacity)
+        price = parseInt(price)
+        if (type !== "all") {
+            tempRooms = tempRooms.filter(room => room.type === type);
+        }
+        this.setState({
+            sortedRooms: tempRooms
+        })
     }
 
 
