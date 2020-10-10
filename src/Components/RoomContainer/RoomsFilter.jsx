@@ -78,6 +78,25 @@ export const RoomsFilter = ({ rooms }) => {
                     className="form-control"
                 />
                 </div>
+                <div className="form-group">
+                <label htmlFor="price">room size </label>
+                <div className="size-inputs">
+                    <input
+                    type="number"
+                    name="minSize"
+                    value={minSize}
+                    onChange={handleChange}
+                    className="size-input"
+                    />
+                    <input
+                    type="number"
+                    name="maxSize"
+                    value={maxSize}
+                    onChange={handleChange}
+                    className="size-input"
+                    />
+                </div>
+                </div>
             </form>
         </section>
     )
